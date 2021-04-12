@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_instagram_clon/account_Page.dart';
 
 import 'home_Page.dart';
 
@@ -13,7 +14,7 @@ class _TabPageState extends State<TabPage> {
   List _paged = [
     HomePage(),
     Text('page2'),
-    Text('page3'),
+    AccountPage(),
   ];
   @override
   Widget build(BuildContext context) {
