@@ -1,6 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  final User user;
+
+  HomePage(this.user);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,12 +45,13 @@ class HomePage extends StatelessWidget {
                           width: 80.0,
                           height: 80.0,
                           child: CircleAvatar(
-                            backgroundImage: NetworkImage('https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg'),
+                            backgroundImage: NetworkImage(user.photoURL),
                           ),
                         ),
                         Padding(padding: EdgeInsets.all(8.0)),
-                        Text('이메일 주소', style: TextStyle(fontWeight: FontWeight.bold)),
-                        Text('이름'),
+                        Text(user.email,
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(user.displayName),
                         Padding(padding: EdgeInsets.all(8.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -53,19 +59,25 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               width: 70.0,
                               height: 70.0,
-                              child: Image.network('https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg', fit: BoxFit.cover),
+                              child: Image.network(
+                                  'https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg',
+                                  fit: BoxFit.cover),
                             ),
                             Padding(padding: EdgeInsets.all(1.0)),
                             SizedBox(
                               width: 70.0,
                               height: 70.0,
-                              child: Image.network('https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg', fit: BoxFit.cover),
+                              child: Image.network(
+                                  'https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg',
+                                  fit: BoxFit.cover),
                             ),
                             Padding(padding: EdgeInsets.all(1.0)),
                             SizedBox(
                               width: 70.0,
                               height: 70.0,
-                              child: Image.network('https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg', fit: BoxFit.cover),
+                              child: Image.network(
+                                  'https://sccdn.chosun.com/news/html/2020/03/03/2020030401000230200013251.jpg',
+                                  fit: BoxFit.cover),
                             ),
                             Padding(padding: EdgeInsets.all(1.0)),
                           ],

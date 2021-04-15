@@ -2,6 +2,7 @@
     package="com.example.flutter_instagram_clon">
    <application
         android:label="flutter_instagram_clon"
+       android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
